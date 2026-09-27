@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+  <rect width="600" height="600" fill="#F5F5F5"/>
+  <!-- T-Shirt silhouette - Black -->
+  <g transform="translate(100, 80)">
+    <!-- Left sleeve -->
+    <path d="M0 80 L80 20 L120 100 L70 130 Z" fill="#1a1a1a"/>
+    <!-- Right sleeve -->
+    <path d="M320 80 L400 20 L400 130 L330 100 Z" fill="#1a1a1a"/>
+    <!-- Body -->
+    <rect x="70" y="100" width="260" height="340" rx="8" fill="#1a1a1a"/>
+    <!-- Collar -->
+    <path d="M130 100 Q200 160 270 100" fill="#111111" stroke="#111111" stroke-width="2"/>
+    <!-- Subtle logo mark -->
+    <circle cx="200" cy="200" r="18" fill="#333333"/>
+    <text x="200" y="207" text-anchor="middle" font-size="14" fill="#666666" font-family="sans-serif">●</text>
+  </g>
+  <!-- Hanger -->
+  <line x1="300" y1="40" x2="300" y2="85" stroke="#AAAAAA" stroke-width="3" stroke-linecap="round"/>
+  <path d="M270 85 Q300 70 330 85" stroke="#AAAAAA" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

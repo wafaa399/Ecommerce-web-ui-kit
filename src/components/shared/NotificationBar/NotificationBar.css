@@ -1,0 +1,33 @@
+.notification-bar {
+  background-color: var(--color-notification-bg);
+  color: var(--color-notification-text);
+  padding: 10px var(--container-padding);
+  text-align: center;
+}
+
+.notification-bar__inner {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.notification-bar__text {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: 0.01em;
+}
+
+.notification-bar__link {
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  transition: opacity var(--transition-fast);
+}
+
+.notification-bar__link:hover {
+  opacity: 0.8;
+}

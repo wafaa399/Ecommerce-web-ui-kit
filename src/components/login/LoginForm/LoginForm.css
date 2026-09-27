@@ -1,0 +1,142 @@
+.login-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Google Button */
+.login-form__google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: 11px var(--space-4);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  color: var(--color-gray-700);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.login-form__google-btn:hover {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-gray-400);
+}
+
+.login-form__google-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Divider */
+.login-form__divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.login-form__divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-gray-200);
+}
+
+.login-form__divider-text {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+/* Server Error */
+.login-form__server-error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--color-error);
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* Forgot Password */
+.login-form__forgot {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: calc(var(--space-2) * -1);
+}
+
+.login-form__forgot-link {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition-fast);
+}
+
+.login-form__forgot-link:hover {
+  color: var(--color-black);
+}
+
+/* Submit Button */
+.login-form__submit-btn {
+  width: 100%;
+  padding: 14px var(--space-4);
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), opacity var(--transition-fast);
+  letter-spacing: 0.01em;
+}
+
+.login-form__submit-btn:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.login-form__submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Sign Up Link */
+.login-form__signup-text {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+}
+
+.login-form__signup-link {
+  color: var(--color-black);
+  font-weight: var(--font-weight-medium);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  transition: opacity var(--transition-fast);
+}
+
+.login-form__signup-link:hover {
+  opacity: 0.7;
+}

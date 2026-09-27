@@ -1,0 +1,105 @@
+.success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-5);
+  padding: var(--space-10) 0 var(--space-6);
+}
+
+/* Icon */
+.success-message__icon-wrapper {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-message__icon-bg {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: success-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  z-index: 1;
+}
+
+.success-message__ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--radius-full);
+  border: 3px solid var(--color-success);
+  opacity: 0;
+  animation: success-ring 0.6s ease 0.2s forwards;
+}
+
+.success-message__checkmark {
+  animation: checkmark-draw 0.3s ease 0.1s both;
+}
+
+/* Text */
+.success-message__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.success-message__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+  line-height: var(--line-height-tight);
+}
+
+.success-message__subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-gray-500);
+  line-height: var(--line-height-relaxed);
+}
+
+.success-message__order-number {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-black);
+  background-color: var(--color-gray-100);
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  margin-top: var(--space-2);
+}
+
+/* Animations */
+@keyframes success-pop {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes success-ring {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes checkmark-draw {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .success-message__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .success-message {
+    padding: var(--space-8) 0 var(--space-4);
+  }
+}

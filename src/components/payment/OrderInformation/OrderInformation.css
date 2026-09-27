@@ -1,0 +1,117 @@
+.order-info {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.order-info__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+}
+
+.order-info__sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* Section */
+.order-info__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.order-info__section:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.order-info__section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-700);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.order-info__section-icon {
+  display: flex;
+  align-items: center;
+  color: var(--color-gray-500);
+}
+
+.order-info__section-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.order-info__value {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  line-height: var(--line-height-relaxed);
+}
+
+.order-info__value--name {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-black);
+}
+
+/* Paid Badge */
+.order-info__paid-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  background-color: var(--color-success-light);
+  color: var(--color-success);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  padding: 3px var(--space-2);
+  border-radius: var(--radius-full);
+  margin-top: var(--space-1);
+  width: fit-content;
+}
+
+/* Detail Rows */
+.order-info__detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.order-info__detail-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+}
+
+.order-info__detail-value {
+  font-size: var(--font-size-sm);
+  color: var(--color-black);
+  font-weight: var(--font-weight-medium);
+  text-align: right;
+}
+
+/* Status Badge */
+.order-info__status-badge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  padding: 3px var(--space-2);
+  border-radius: var(--radius-full);
+}
+
+.order-info__status-badge--confirmed {
+  background-color: var(--color-success-light);
+  color: var(--color-success);
+}

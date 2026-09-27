@@ -1,0 +1,17 @@
+.payment-success-page {
+  padding: 0 0 var(--space-4);
+}
+
+.payment-success-page__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .payment-success-page__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
