@@ -1,7 +1,22 @@
 const PAGE_SIZE = 9; // num of product every display
 
+// ---- preload all product 
+PRODUCTS_DATA.forEach(function (p) {
+  const img = new Image();
+  img.src = p.image;
+});
+
+
+function debounce(fn, delay) {
+  let timer;
+  return function () {
+    clearTimeout(timer);
+    timer = setTimeout(fn, delay);
+  };
+}
+
 //filters
-let categories = []; 
+let categories = [];
 let gender = "all"; // "all" "men" "women"
 let colors = []; //  ["blue"]
 let sizes = []; //  ["M", "L"]
@@ -9,8 +24,8 @@ let maxPrice = 100;
 let search = "";
 let sort = "default";
 
-let filtered = []; 
-let shown = 0; 
+let filtered = [];
+let shown = 0;
 
 // elements page-
 const grid = document.getElementById("productsGrid");
@@ -24,7 +39,6 @@ const searchInput = document.querySelector(".search-box input");
 // filtering and order
 function getFilteredProducts() {
   let result = PRODUCTS_DATA.filter(function (p) {
-  
     if (categories.length > 0 && !categories.includes(p.category)) return false;
     if (gender !== "all" && p.gender !== gender && p.gender !== "unisex") return false;
     if (colors.length > 0 && !colors.some((c) => p.colors.includes(c))) return false;
@@ -43,14 +57,19 @@ function getFilteredProducts() {
 
 //displaying-
 function showMore() {
-  const next = filtered.slice(shown, shown + PAGE_SIZE); 
+  const next = filtered.slice(shown, shown + PAGE_SIZE);
+  const isFirstBatch = shown === 0; // first batch after a filter/refresh loads immediately
   let html = "";
 
   next.forEach(function (p) {
+    const loadingAttrs = isFirstBatch
+      ? 'loading="eager" fetchpriority="high"'
+      : 'loading="lazy"';
+
     html += `
       <div class="col-md-4 col-sm-6 product-card mb-4">
         <div class="product-image-placeholder">
-          <img src="${p.image}" alt="${p.name}" loading="lazy" decoding="async">
+          <img src="${p.image}" alt="${p.name}" width="400" height="400" ${loadingAttrs}>
         </div>
         <h6>${p.name}</h6>
         <div class="d-flex align-items-center gap-2">
@@ -92,15 +111,12 @@ function update() {
   showAppliedFilters();
 }
 
-
-
-// adding anew filter and removed it
+// adding a new filter and removing it
 function toggleItem(array, value) {
   const i = array.indexOf(value);
   if (i === -1) array.push(value);
   else array.splice(i, 1);
 }
-
 
 document.querySelectorAll(".category").forEach(function (box) {
   box.addEventListener("change", function () {
@@ -112,13 +128,14 @@ document.querySelectorAll(".category").forEach(function (box) {
 // gender
 document.querySelectorAll(".gender-btn").forEach(function (btn) {
   btn.addEventListener("click", function () {
-    const same = gender === btn.dataset.gender; // ضغطت على المفعل؟
+    const same = gender === btn.dataset.gender; // clicked the active one?
     gender = same ? "all" : btn.dataset.gender;
     document.querySelectorAll(".gender-btn").forEach((b) => b.classList.remove("active"));
     if (!same) btn.classList.add("active");
     update();
   });
 });
+
 //colors
 document.querySelectorAll(".color-swatch").forEach(function (btn) {
   btn.addEventListener("click", function () {
@@ -137,18 +154,20 @@ document.querySelectorAll(".size-filter").forEach(function (btn) {
   });
 });
 
-//price
+//price (label updates instantly, grid updates after a short pause)
+const debouncedUpdate = debounce(update, 200);
 priceRange.addEventListener("input", function () {
   maxPrice = Number(priceRange.value);
   priceValue.textContent = "$ " + maxPrice.toFixed(2);
-  update();
+  debouncedUpdate();
 });
 
-// search
-searchInput.addEventListener("input", function () {
+// search (debounced)
+const debouncedSearch = debounce(function () {
   search = searchInput.value.trim();
   update();
-});
+}, 250);
+searchInput.addEventListener("input", debouncedSearch);
 
 // ordering
 document.querySelectorAll("[data-sort]").forEach(function (link) {
@@ -172,7 +191,6 @@ function resetFilters() {
   search = "";
   sort = "default";
 
-
   document.querySelectorAll(".category").forEach((box) => (box.checked = false));
   document.querySelectorAll(".gender-btn, .color-swatch, .size-filter").forEach((b) => b.classList.remove("active"));
   priceRange.value = 100;
@@ -184,8 +202,6 @@ function resetFilters() {
   update();
 }
 document.getElementById("resetFilters").addEventListener("click", resetFilters);
-
-
 
 const params = new URLSearchParams(location.search);
 
