@@ -1,0 +1,655 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign In - Ecommerce</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="signin.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <!-- ================= PROMO BAR ================= -->
+
+    <div class="notification-bar">
+
+        <span>Get 25% OFF on your first order.</span>
+
+        <a href="#">Order Now</a>
+
+    </div>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="main-navbar">
+
+        <div class="navbar-container">
+
+
+            <!-- ================= LOGO ================= -->
+
+            <a class="navbar-brand" href="index.html">
+
+                <span class="brand-icon">
+
+                    <svg
+                        width="40"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+
+                        <rect
+                            width="40"
+                            height="40"
+                            rx="20"
+                            fill="#0E1422" />
+
+                        <path
+                            d="M24.4769 11.3485L18.204 7.55509C17.6119 7.19292 16.9388 7.0015 16.2532 7.00031C14.2094 7.00031 12.3348 8.71225 12.3348 11.105V25.3073L24.4769 17.9669C26.9083 16.4947 26.9083 12.82 24.4769 11.3485ZM15.8484 18.448V10.8679L22.1163 14.6567L15.8484 18.448Z"
+                            fill="white" />
+
+                        <path
+                            d="M27.8489 32.9844C27.8489 33.0273 15.9908 32.966 15.9908 32.966L14.9434 32.8425C13.2467 32.644 11.9443 31.1233 12.002 29.3346C12.002 29.2917 12.0057 29.2519 12.0081 29.2103C12.0547 28.4365 12.3261 27.6961 12.7858 27.0885C12.9725 26.8461 13.2009 26.6425 13.4592 26.4882L22.4782 21.0725C24.3414 19.9535 25.8931 19.562 26.6999 17.5341C26.9974 16.7757 27.126 15.9562 27.0757 15.1379L27.0446 14.5865L27.9651 19.9204C28.083 20.8264 27.9013 21.7537 27.4211 22.5169C27.1326 22.9785 26.7475 23.3653 26.2951 23.6479L15.8295 28.8943C15.8191 28.9006 15.809 28.9074 15.7993 28.9149C15.5127 29.1293 15.6896 29.6069 16.0403 29.5867L24.7515 29.6403C26.4433 29.5417 27.8526 31.2112 27.8489 32.9844Z"
+                            fill="white" />
+
+                    </svg>
+
+                </span>
+
+                <span>Ecommerce</span>
+
+            </a>
+
+
+
+            <!-- ================= NAV LINKS ================= -->
+
+            <nav class="nav-links">
+
+                <a
+                    href="index.html"
+                    class="nav-link active">
+
+                    Home
+
+                </a>
+
+
+                <div class="nav-dropdown">
+
+                    <a
+                        href="listing.html"
+                        class="nav-link">
+
+                        Categories
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </a>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="listing.html?gender=men">
+                            Men
+                        </a>
+
+                        <a href="listing.html?gender=women">
+                            Women
+                        </a>
+
+                        <a href="listing.html?category=accessories">
+                            Accessories
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="about.html"
+                    class="nav-link">
+
+                    About
+
+                </a>
+
+
+                <a
+                    href="contact.html"
+                    class="nav-link">
+
+                    Contact
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- ================= RIGHT SIDE ================= -->
+
+            <div class="navbar-right">
+
+
+                <!-- Search -->
+
+                <form class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        placeholder="Search products">
+
+                </form>
+
+
+
+                <!-- Cart -->
+
+                <a
+                    href="#"
+                    class="icon-btn"
+                    aria-label="Cart">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                </a>
+
+
+
+                <!-- Account -->
+
+                <a
+                    href="#"
+                    class="icon-btn"
+                    aria-label="My Account">
+
+                    <i class="fa-regular fa-user"></i>
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<section class="breadcrumb-section">
+
+    <div class="container">
+
+        <h1>Sign In</h1>
+
+        <div class="breadcrumb">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <span>/</span>
+
+            <span>
+                Sign In
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SIGN IN
+===================================================== -->
+
+<main class="signin-section">
+
+    <div class="signin-container">
+
+
+        <h2>
+            Welcome Back
+        </h2>
+
+
+        <p class="subtitle">
+            Sign in to continue shopping
+        </p>
+
+
+
+        <!-- Google -->
+
+        <button
+            type="button"
+            class="google-btn">
+
+            <span class="google-icon">
+                G
+            </span>
+
+            Continue with Google
+
+        </button>
+
+
+
+        <!-- OR -->
+
+        <div class="or-divider">
+
+            <span></span>
+
+            <p>OR</p>
+
+            <span></span>
+
+        </div>
+
+
+
+        <!-- ================= FORM ================= -->
+
+        <form
+            id="signinForm"
+            novalidate>
+
+
+            <!-- Email -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email *
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email">
+
+                <small
+                    class="error-message"
+                    id="emailError">
+                </small>
+
+            </div>
+
+
+
+            <!-- Password -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password *
+                </label>
+
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        autocomplete="current-password">
+
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        id="showPassword">
+
+                        <i class="fa-regular fa-eye"></i>
+
+                    </button>
+
+                </div>
+
+
+                <small
+                    class="error-message"
+                    id="passwordError">
+                </small>
+
+            </div>
+
+
+
+            <!-- Remember + Forgot -->
+
+            <div class="login-options">
+
+
+                <label class="remember">
+
+                    <input
+                        type="checkbox"
+                        id="remember">
+
+                    <span>
+                        Remember me
+                    </span>
+
+                </label>
+
+
+                <a
+                    href="#"
+                    class="forgot-password">
+
+                    Forgot Password?
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Submit -->
+
+            <button
+                type="submit"
+                class="signin-btn">
+
+                Sign In
+
+            </button>
+
+
+
+            <!-- Success -->
+
+            <p
+                class="success-message"
+                id="successMessage">
+            </p>
+
+
+        </form>
+
+
+
+        <!-- Sign Up -->
+
+        <p class="signup-text">
+
+            Don't have an account?
+
+            <a href="#">
+                Sign Up
+            </a>
+
+        </p>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+
+    <div class="footer-container">
+
+
+        <!-- ================= BRAND ================= -->
+
+        <div class="footer-brand">
+
+
+            <div class="footer-logo">
+
+                <span class="footer-logo-icon">
+
+                    <i class="fa-solid fa-cube"></i>
+
+                </span>
+
+                <span>
+                    Ecommerce
+                </span>
+
+            </div>
+
+
+            <p>
+                DevCut is a YouTube channel for practical
+                project-based learning.
+            </p>
+
+
+            <!-- Social -->
+
+            <div class="social-icons">
+
+
+                <a
+                    href="#"
+                    aria-label="GitHub">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    aria-label="Instagram">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    aria-label="YouTube">
+
+                    <i class="fa-brands fa-youtube"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================= SUPPORT ================= -->
+
+        <div class="footer-column">
+
+            <h3>
+                SUPPORT
+            </h3>
+
+
+            <a href="#">
+                FAQ
+            </a>
+
+
+            <a href="#">
+                Terms of use
+            </a>
+
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+        </div>
+
+
+
+        <!-- ================= COMPANY ================= -->
+
+        <div class="footer-column">
+
+            <h3>
+                COMPANY
+            </h3>
+
+
+            <a href="#">
+                About us
+            </a>
+
+
+            <a href="#">
+                Contact
+            </a>
+
+
+            <a href="#">
+                Careers
+            </a>
+
+        </div>
+
+
+
+        <!-- ================= SHOP ================= -->
+
+        <div class="footer-column">
+
+            <h3>
+                SHOP
+            </h3>
+
+
+            <a href="#">
+                My Account
+            </a>
+
+
+            <a href="#">
+                Checkout
+            </a>
+
+
+            <a href="#">
+                Cart
+            </a>
+
+        </div>
+
+
+
+        <!-- ================= PAYMENTS ================= -->
+
+        <div class="footer-column payments">
+
+
+            <h3>
+                ACCEPTED PAYMENTS
+            </h3>
+
+
+            <div class="payment-methods">
+
+
+                <span class="mastercard">
+
+                    <i class="fa-brands fa-cc-mastercard"></i>
+
+                </span>
+
+
+                <span class="amex">
+
+                    <i class="fa-brands fa-cc-amex"></i>
+
+                </span>
+
+
+                <span class="visa">
+
+                    <i class="fa-brands fa-cc-visa"></i>
+
+                </span>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================= FOOTER BOTTOM ================= -->
+
+    <div class="footer-bottom">
+
+        © 2026 DevCut. All rights reserved.
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- JavaScript -->
+
+<script src="signin.js"></script>
+
+
+</body>
+
+</html>
