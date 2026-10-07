@@ -1,0 +1,1052 @@
+ /* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: #0e1422;
+    background: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   NOTIFICATION BAR
+===================================================== */
+
+.notification-bar {
+    width: 100%;
+    height: 22px;
+
+    background: #0e1422;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    font-size: 9px;
+    font-weight: 400;
+}
+
+.notification-bar a {
+    color: white;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.notification-bar a:hover {
+    opacity: 0.8;
+}
+
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.main-navbar {
+    width: 100%;
+    height: 60px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.navbar-container {
+    width: 100%;
+    max-width: 1200px;
+
+    height: 100%;
+
+    margin: auto;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: #0e1422;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+.brand-icon {
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.brand-icon svg {
+    width: 25px;
+    height: 25px;
+}
+
+
+
+/* =====================================================
+   NAV LINKS
+===================================================== */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.nav-link {
+    color: #4d525b;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    transition: 0.2s ease;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+
+.nav-link:hover {
+    color: #0e1422;
+}
+
+
+.nav-link.active {
+    color: #0e1422;
+}
+
+
+.nav-link i {
+    font-size: 6px;
+}
+
+
+
+/* =====================================================
+   CATEGORY DROPDOWN
+===================================================== */
+
+.nav-dropdown {
+    position: relative;
+}
+
+
+.dropdown-menu {
+    position: absolute;
+
+    top: 22px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 145px;
+
+    padding: 7px 0;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 5px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+    display: none;
+
+    z-index: 1000;
+}
+
+
+.nav-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.dropdown-menu a {
+    display: block;
+
+    padding: 8px 14px;
+
+    color: #555b64;
+
+    font-size: 9px;
+}
+
+
+.dropdown-menu a:hover {
+    background: #f7f7f7;
+
+    color: #0e1422;
+}
+
+
+
+/* =====================================================
+   NAVBAR RIGHT
+===================================================== */
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box {
+    width: 180px;
+    height: 29px;
+
+    background: #f7f7f7;
+
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 9px;
+}
+
+
+.search-box i {
+    color: #b4b7bc;
+
+    font-size: 9px;
+
+    margin-right: 7px;
+}
+
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 9px;
+
+    color: #333;
+}
+
+
+.search-box input::placeholder {
+    color: #b4b7bc;
+}
+
+
+
+/* =====================================================
+   ICON BUTTONS
+===================================================== */
+
+.icon-btn {
+    width: 27px;
+    height: 27px;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #777777;
+
+    transition: 0.2s ease;
+}
+
+
+.icon-btn i {
+    font-size: 10px;
+}
+
+
+.icon-btn:hover {
+    color: #0e1422;
+
+    border-color: #cccccc;
+}
+
+
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.breadcrumb-section {
+    background: #f7f7f8;
+
+    padding: 35px 0;
+}
+
+
+.breadcrumb-section .container {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+.breadcrumb-section h1 {
+    font-size: 26px;
+
+    margin-bottom: 10px;
+
+    color: #0e1422;
+}
+
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 11px;
+}
+
+
+.breadcrumb a {
+    color: #777777;
+}
+
+
+.breadcrumb span {
+    color: #999999;
+}
+
+
+
+/* =====================================================
+   SIGN IN
+===================================================== */
+
+.signin-section {
+    min-height: 600px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+}
+
+
+.signin-container {
+    width: 100%;
+    max-width: 430px;
+}
+
+
+.signin-container h2 {
+    text-align: center;
+
+    font-size: 25px;
+
+    color: #0e1422;
+
+    margin-bottom: 8px;
+}
+
+
+.subtitle {
+    text-align: center;
+
+    color: #888888;
+
+    font-size: 12px;
+
+    margin-bottom: 25px;
+}
+
+
+
+/* =====================================================
+   GOOGLE BUTTON
+===================================================== */
+
+.google-btn {
+    width: 100%;
+    height: 45px;
+
+    background: white;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #333333;
+
+    font-size: 12px;
+
+    transition: 0.2s ease;
+}
+
+
+.google-btn:hover {
+    background: #f8f8f8;
+}
+
+
+.google-icon {
+    font-weight: 700;
+
+    color: #4285f4;
+
+    font-size: 17px;
+}
+
+
+
+/* =====================================================
+   OR DIVIDER
+===================================================== */
+
+.or-divider {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 25px 0;
+}
+
+
+.or-divider span {
+    height: 1px;
+
+    background: #eeeeee;
+
+    flex: 1;
+}
+
+
+.or-divider p {
+    color: #999999;
+
+    font-size: 10px;
+}
+
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 11px;
+
+    color: #333333;
+
+    font-weight: 500;
+}
+
+
+.form-group input {
+    width: 100%;
+    height: 42px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 5px;
+
+    padding: 0 12px;
+
+    outline: none;
+
+    font-size: 12px;
+
+    transition: 0.2s ease;
+}
+
+
+.form-group input:focus {
+    border-color: #0e1422;
+}
+
+
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+.password-wrapper {
+    position: relative;
+}
+
+
+.password-wrapper input {
+    padding-right: 42px;
+}
+
+
+.show-password {
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    color: #888888;
+}
+
+
+.show-password:hover {
+    color: #0e1422;
+}
+
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error-message {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 9px;
+
+    color: #dc3545;
+}
+
+
+
+/* =====================================================
+   LOGIN OPTIONS
+===================================================== */
+
+.login-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 8px 0 20px;
+}
+
+
+.remember {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #666666;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+
+.remember input {
+    width: 13px;
+    height: 13px;
+}
+
+
+.forgot-password {
+    color: #0e1422;
+
+    font-size: 10px;
+}
+
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+
+
+/* =====================================================
+   SIGN IN BUTTON
+===================================================== */
+
+.signin-btn {
+    width: 100%;
+    height: 43px;
+
+    background: #0e1422;
+
+    border: none;
+
+    border-radius: 5px;
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.signin-btn:hover {
+    background: #1c2435;
+}
+
+
+
+/* =====================================================
+   SUCCESS
+===================================================== */
+
+.success-message {
+    text-align: center;
+
+    margin-top: 12px;
+
+    font-size: 10px;
+
+    color: #198754;
+}
+
+
+
+/* =====================================================
+   SIGN UP
+===================================================== */
+
+.signup-text {
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #777777;
+
+    font-size: 10px;
+}
+
+
+.signup-text a {
+    color: #0e1422;
+
+    font-weight: 600;
+}
+
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eeeeee;
+}
+
+
+.footer-container {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 40px 0 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr
+        1fr
+        1.3fr;
+
+    gap: 50px;
+}
+
+
+
+/* =====================================================
+   FOOTER BRAND
+===================================================== */
+
+.footer-brand {
+    max-width: 230px;
+}
+
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: #0e1422;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+
+.footer-logo-icon {
+    width: 20px;
+    height: 20px;
+
+    background: #0e1422;
+
+    color: white;
+
+    border-radius: 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.footer-logo-icon i {
+    font-size: 9px;
+}
+
+
+.footer-brand p {
+    color: #858991;
+
+    font-size: 9px;
+
+    line-height: 1.7;
+}
+
+
+
+/* =====================================================
+   SOCIAL
+===================================================== */
+
+.social-icons {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 14px;
+}
+
+
+.social-icons a {
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #666666;
+
+    font-size: 9px;
+
+    transition: 0.2s ease;
+}
+
+
+.social-icons a:hover {
+    background: #0e1422;
+
+    color: white;
+
+    border-color: #0e1422;
+}
+
+
+
+/* =====================================================
+   FOOTER COLUMNS
+===================================================== */
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+.footer-column h3 {
+    color: #9b9da2;
+
+    font-size: 8px;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 6px;
+}
+
+
+.footer-column a {
+    color: #666b73;
+
+    font-size: 9px;
+
+    transition: 0.2s ease;
+}
+
+
+.footer-column a:hover {
+    color: #0e1422;
+}
+
+
+
+/* =====================================================
+   PAYMENT
+===================================================== */
+
+.payment-methods {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.payment-methods span {
+    font-size: 20px;
+}
+
+
+.mastercard {
+    color: #eb001b;
+}
+
+
+.amex {
+    color: #2e77bc;
+}
+
+
+.visa {
+    color: #1a4c9c;
+}
+
+
+
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 17px 0;
+
+    border-top: 1px solid #eeeeee;
+
+    text-align: center;
+
+    color: #999999;
+
+    font-size: 8px;
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .search-box {
+        width: 140px;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 30px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar-container {
+        flex-wrap: wrap;
+
+        height: auto;
+
+        padding: 12px 20px;
+    }
+
+
+    .main-navbar {
+        height: auto;
+    }
+
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        margin: 15px 0 0;
+    }
+
+
+    .navbar-right {
+        margin-left: auto;
+    }
+
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .notification-bar {
+        font-size: 8px;
+    }
+
+
+    .navbar-brand {
+        font-size: 12px;
+    }
+
+
+    .nav-links {
+        gap: 12px;
+    }
+
+
+    .nav-link {
+        font-size: 9px;
+    }
+
+
+    .search-box {
+        width: 120px;
+    }
+
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+
+    .signin-section {
+        padding: 40px 15px;
+    }
+
+}
